@@ -1,0 +1,293 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-font: 'Poppins', sans-serif;
+  --black: #070D15;
+  --blue: #264065;
+  --grey: #909090;
+  --gray: #FAF8F5;
+  --cyan: #A9D6CB;
+  --max-width-page: 1400px;
+
+}
+
+h1,
+h3,
+p {
+  font-family: var(--primary-font);
+}
+
+body {
+  margin: 0;
+  display: flex;           
+  width: var(--max-width-page);            
+  height: 600px;            
+}
+
+.mitad-gray {
+  background-color: var(--gray);
+  flex: 0.65; 
+}
+
+
+.mitad-cyan {
+  background-color: var(--cyan);
+  flex: 0.35;
+}
+
+
+.btn {
+  display: inline-block;
+  background-color: var(--blue);
+  color: white;
+  padding: 8px 25px;
+  border-radius: 30px;
+  font-weight: 300;
+  text-decoration: none;
+  
+}
+
+
+.mitad-gray header{
+  display: flex;
+  align-items: center;
+  gap: 48px; 
+  padding: 20px 0 40px;
+}
+
+.header__logo img { 
+  display:block; 
+  width: 100%;
+  padding-left: 80px; 
+}
+
+nav.nav-primary ul {
+  display: flex;
+  align-items: center;
+  gap: 32px;              
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 300;
+  font-family: var(--primary-font);
+}
+
+
+nav.nav-primary { 
+  margin-left: 50px; 
+}
+
+nav.nav-primary a {
+  text-decoration: none;
+  color: var(--blue);
+  font-weight: 500;
+  padding: 6px 0;
+}
+
+nav.nav-primary a.chevron { 
+  display: inline-flex; 
+  align-items: 
+  center; 
+  gap: 6px; 
+}
+nav.nav-primary a.chevron img { 
+  width: 12px; 
+  height: auto; 
+  translate: 0 1px; 
+}
+
+.hero__content h1 {
+  font-family: var(--primary-font);
+  font-size: 42px;
+  line-height: 50px;
+  font-weight: 700;
+  max-width: 65%;
+  color: var(--blue);
+  padding-left: 80px;
+  margin: 50px 0;
+}
+
+.hero__description {
+  color: var(--grey);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 20px;
+  padding-left: 80px;
+  max-width: 60%;
+  margin-bottom: 50px;
+}
+
+.hero__search { padding-left: 80px; }
+
+.hero__search ul {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    gap: 18px;
+    font-family: var(--primary-font);
+    align-items: center;
+    background: none;
+    font-size: 14px;
+}
+
+
+
+.hero__search .btn_play {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--blue);                 
+  text-decoration: none;
+}
+
+/* 1) Apagar por completo el piquito del botón en el hero */
+.hero__search .btn::after,
+.hero__search .btn:after{
+  content: none !important;
+  display: none !important;
+}
+
+/* 2) Asegurar el orden de apilado: el círculo por encima del botón */
+.hero__search .btn{ position: relative; z-index: 1; }
+.hero__search .btn_play{ position: relative; z-index: 2; }
+
+/* 3) Círculo + icono play centrado (usando tu SVG) */
+.hero__search .btn_play::before{
+  content:"";
+  display:inline-block;
+  width:40px; height:40px; flex:0 0 40px;
+  border-radius:50%;
+  background-color:#fff;
+  background-image:url("../img/icon-play.svg"); /* desde css/ → ../img/ */
+  background-repeat:no-repeat;
+  background-position:-34px -17px;   /* centrado perfecto */
+  background-size:110px;           /* tamaño del triángulo */
+  box-shadow:0 8px 18px rgba(0,0,0,.15);
+}
+
+.hero__info ul {
+    display: inline-flex;
+    background-color: white;
+    gap: 60px;
+    padding: 50px;
+    padding-top: 15px;
+    justify-items: center;
+    margin-top: 30px;
+    position: relative;
+}
+
+.hero__info ul li{
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centra icono, número y texto */
+  text-align: center;
+  gap: 10px;
+}
+
+
+.header__login ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 24px;
+    font-family: var(--primary-font);
+    font-size: 14px;
+}
+
+.hero__img_lotus img {
+margin-left: -50px;
+margin-top: -10px;
+width: 350px;
+opacity: 7%;
+}
+
+.hero__img_woman {
+  position: absolute;
+  right: 730px;      
+  bottom: 190px;     
+  z-index: 1;
+} 
+
+.hero__img_woman img { 
+  width: 620px; 
+  display:block; 
+}
+
+.review__item1 {
+    background: rgba(236, 236, 236,.6);
+    border-radius: 10px;
+    max-width: 55%;
+    padding: 10px;
+    margin-left: 120px;
+    margin-top: -80px;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.review__item2 {
+    background: rgba(236, 236, 236,.6);
+    border-radius: 15px;
+    max-width: 55%;
+    padding: 10px;
+    margin-left: 70px;
+    position: relative;
+    z-index: 2;
+}
+
+.review__item1 p {
+    font-size: 12px;
+    color: var(--black);
+
+}
+
+.review__item1 p span {
+    font-size: 12px;
+    color: var(--blue);
+
+}
+
+.review__item2 p {
+    font-size: 12px;
+    color: var(--black);
+}
+
+
+.spa__item-description {
+    font-size: 12px;
+    color: var(--grey);
+    text-align: center;
+}
+
+.spa__item-title {
+    font-weight: 500;
+    color: var(--blue);
+    text-align: center;
+}
+
+.spa__item-img{
+  display: block;                
+  width: 40px;          
+}
+
+.reviews__item-img {
+  width: 15px;
+}
+
+.reviews__item-description {
+  color: var(--black);
+  font-weight: 300;
+  align-self: center;
+}
+
+.reviews__item-description span {
+  color: var(--blue);
+  font-weight: 700;
+  align-self: center;
+}
