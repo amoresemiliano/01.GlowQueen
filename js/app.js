@@ -246,8 +246,16 @@ class UI {
 
 
         // Import Import logic
-        document.getElementById('btn-open-import').onclick = () => document.getElementById('import-modal').classList.remove('hidden');
-        document.getElementById('close-import').onclick = () => document.getElementById('import-modal').classList.add('hidden');
+        document.getElementById('btn-open-import').onclick = () => {
+            const im = document.getElementById('import-modal');
+            im.classList.remove('hidden');
+            im.style.display = 'flex';
+        };
+        document.getElementById('close-import').onclick = () => {
+            const im = document.getElementById('import-modal');
+            im.classList.add('hidden');
+            im.style.display = 'none';
+        };
 
         document.getElementById('import-form').onsubmit = async (e) => {
             e.preventDefault();
@@ -288,7 +296,9 @@ class UI {
             }
 
             alert('Importación completada con éxito.');
-            document.getElementById('import-modal').classList.add('hidden');
+            const im = document.getElementById('import-modal');
+            im.classList.add('hidden');
+            im.style.display = 'none';
             e.target.reset();
             this.renderAll();
         };
